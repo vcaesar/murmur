@@ -14,6 +14,7 @@ const (
 )
 
 var (
+	// Seed murmur seed
 	Seed = uint32(1)
 )
 
