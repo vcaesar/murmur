@@ -1,0 +1,13 @@
+language: go
+
+go_import_path: github.com/go-ego/murmur
+
+go:
+  # - 1.7.x
+  - 1.8.x
+  - 1.9.x
+  - tip
+
+install:
+  - export PATH=$PATH:$HOME/gopath/bin
+  - go get -v -t ./...
