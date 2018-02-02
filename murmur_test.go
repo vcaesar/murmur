@@ -14,7 +14,7 @@ func TestMurmur3(t *testing.T) {
 
 	text2 := []byte("The quick brown fox jumps over the lazy cog")
 	expectedHash2 := uint32(0xd5ece287)
-	actualHash2 := Murmur3(text2)
+	actualHash2 := Murmur3(text2, 1)
 	if expectedHash2 != actualHash2 {
 		t.Errorf("Expected hash value: %d, got %d", expectedHash2, actualHash2)
 	}
@@ -30,7 +30,7 @@ func TestSum32(t *testing.T) {
 
 	text2 := "The quick brown fox jumps over the lazy cog"
 	expectedHash2 := uint32(0xd5ece287)
-	actualHash2 := Sum32(text2)
+	actualHash2 := Sum32(text2, 1)
 	if expectedHash2 != actualHash2 {
 		t.Errorf("Expected hash value: %d, got %d", expectedHash2, actualHash2)
 	}
