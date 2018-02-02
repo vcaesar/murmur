@@ -12,6 +12,11 @@ Go Murmur3 hash implementation
 
 Based on [MurmurHash](http://en.wikipedia.org/wiki/MurmurHash), [murmur](https://github.com/huichen/murmur).
 
+## Installing
+```Go
+go get -u github.com/go-ego/murmur
+```
+
 ## Use
 
 ```Go
