@@ -10,7 +10,22 @@ murmur
 
 Go Murmur3 hash implementation
 
-Based on
+Based on [MurmurHash](http://en.wikipedia.org/wiki/MurmurHash), [murmur](https://github.com/huichen/murmur).
 
-[MurmurHash](http://en.wikipedia.org/wiki/MurmurHash)
-[murmur](https://github.com/huichen/murmur)
+## Use
+
+```Go
+package main
+
+import (
+	"log"
+
+	"github.com/go-ego/murmur"
+)
+
+func main() {
+	var str = []byte("github.com")
+	hash32 := murmur.Murmur3(str)
+	log.Println("hash32...", hash32)
+}
+```
