@@ -14,13 +14,27 @@ const (
 )
 
 var (
-	// Seed murmur seed
-	Seed = uint32(1)
+	// defaultSeed default murmur seed
+	defaultSeed = uint32(1)
 )
 
-// Murmur3 murmur Hash32
-func Murmur3(key []byte) (hash uint32) {
-	hash = Seed
+// Sum32 returns a hash from the provided key.
+func Sum32(key string, seed ...uint32) (hash uint32) {
+	hash = defaultSeed
+	if len(seed) > 0 {
+		hash = seed[0]
+	}
+
+	return Murmur3([]byte(key), hash)
+}
+
+// Murmur3 murmur []byte Hash32
+func Murmur3(key []byte, seed ...uint32) (hash uint32) {
+	hash = defaultSeed
+	if len(seed) > 0 {
+		hash = seed[0]
+	}
+
 	iByte := 0
 	for ; iByte+4 <= len(key); iByte += 4 {
 		k := uint32(key[iByte]) | uint32(key[iByte+1])<<8 |

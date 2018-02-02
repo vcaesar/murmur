@@ -24,8 +24,12 @@ import (
 )
 
 func main() {
-	var str = []byte("github.com")
-	hash32 := murmur.Murmur3(str)
+	var str = "github.com"
+	
+	hash32 := murmur.Murmur3([]byte(str))
 	log.Println("hash32...", hash32)
+
+	sum32 := murmur.Sum32(str)
+	log.Println("hash32...", sum32)
 }
 ```
