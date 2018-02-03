@@ -37,12 +37,11 @@ var (
 
 // Sum32 returns a hash from the provided key.
 func Sum32(key string, seed ...uint32) (hash uint32) {
-	hash = defaultSeed
 	if len(seed) > 0 {
-		hash = seed[0]
+		return Murmur3([]byte(key), seed[0])
 	}
 
-	return Murmur3([]byte(key), hash)
+	return Murmur3([]byte(key))
 }
 
 // Murmur3 murmur []byte Hash32
