@@ -30,11 +30,11 @@ import (
 
 func main() {
 	var str = "github.com"
-	
-	hash32 := murmur.Murmur3([]byte(str))
-	log.Println("hash32...", hash32)
 
 	sum32 := murmur.Sum32(str)
 	log.Println("hash32...", sum32)
+
+	hash32 := murmur.Murmur3([]byte(str))
+	log.Println("hash32...", hash32)
 }
 ```
