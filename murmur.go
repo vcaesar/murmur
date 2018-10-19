@@ -39,10 +39,11 @@ var (
 // Murmur3 returns a hash from the provided key using the specified seed.
 func Murmur3(key []byte, seed ...uint32) uint32 {
 	return Sum32(
-		*(*string)((unsafe.Pointer)(&reflect.StringHeader{
-			Len:  len(key),
-			Data: (*reflect.SliceHeader)(unsafe.Pointer(&key)).Data,
-		})),
+		*(*string)((unsafe.Pointer)(
+			&reflect.StringHeader{
+				Len:  len(key),
+				Data: (*reflect.SliceHeader)(unsafe.Pointer(&key)).Data,
+			})),
 		seed...)
 
 	// return Sum32(string(key), seed...)
