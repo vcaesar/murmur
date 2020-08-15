@@ -1,20 +1,18 @@
 murmur
 ======
-[![CircleCI Status](https://circleci.com/gh/go-ego/murmur.svg?style=shield)](https://circleci.com/gh/go-ego/murmur)
-[![codecov](https://codecov.io/gh/go-ego/murmur/branch/master/graph/badge.svg)](https://codecov.io/gh/go-ego/murmur)
-[![Build Status](https://travis-ci.org/go-ego/murmur.svg)](https://travis-ci.org/go-ego/murmur)
-[![Go Report Card](https://goreportcard.com/badge/github.com/go-ego/murmur)](https://goreportcard.com/report/github.com/go-ego/murmur)
-[![GoDoc](https://godoc.org/github.com/go-ego/murmur?status.svg)](https://godoc.org/github.com/go-ego/murmur)
-[![Release](https://github-release-version.herokuapp.com/github/go-ego/murmur/release.svg?style=flat)](https://github.com/go-ego/murmur/releases/latest)
-[![Join the chat at https://gitter.im/go-ego/ego](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/go-ego/ego?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![CircleCI Status](https://circleci.com/gh/vcaesar/murmur.svg?style=shield)](https://circleci.com/gh/vcaesar/murmur)
+[![codecov](https://codecov.io/gh/vcaesar/murmur/branch/master/graph/badge.svg)](https://codecov.io/gh/vcaesar/murmur)
+[![Build Status](https://travis-ci.org/vcaesar/murmur.svg)](https://travis-ci.org/vcaesar/murmur)
+[![Go Report Card](https://goreportcard.com/badge/github.com/vcaesar/murmur)](https://goreportcard.com/report/github.com/vcaesar/murmur)
+[![GoDoc](https://godoc.org/github.com/vcaesar/murmur?status.svg)](https://godoc.org/github.com/vcaesar/murmur)
+[![Release](https://github-release-version.herokuapp.com/github/vcaesar/murmur/release.svg?style=flat)](https://github.com/vcaesar/murmur/releases/latest)
+[![Join the chat at https://gitter.im/vcaesar/ego](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vcaesar/ego?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Go Murmur3 hash implementation
 
-Based on [MurmurHash](http://en.wikipedia.org/wiki/MurmurHash), thanks [murmur](https://github.com/huichen/murmur).
-
 ## Installing
 ```Go
-go get -u github.com/go-ego/murmur
+go get -u github.com/vcaesar/murmur
 ```
 
 ## Use
@@ -25,7 +23,7 @@ package main
 import (
 	"log"
 
-	"github.com/go-ego/murmur"
+	"github.com/vcaesar/murmur"
 )
 
 func main() {
@@ -44,3 +42,5 @@ func main() {
 	log.Println("hash32...", hash32)
 }
 ```
+
+Based on [MurmurHash](http://en.wikipedia.org/wiki/MurmurHash), thanks [murmur](https://github.com/huichen/murmur).
