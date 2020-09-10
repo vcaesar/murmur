@@ -12,7 +12,7 @@
 // License for the specific language governing permissions and limitations
 // under the License.
 
-/* Package murmur Murmur3 32bit hash function based on
+/* Package murmur Murmur3 hash function based on
 http://en.wikipedia.org/wiki/MurmurHash
 */
 
@@ -38,18 +38,17 @@ var (
 
 // Murmur3 returns a hash from the provided key using the specified seed.
 func Murmur3(key []byte, seed ...uint32) uint32 {
-	return Sum32(
-		*(*string)((unsafe.Pointer)(
-			&reflect.StringHeader{
-				Len:  len(key),
-				Data: (*reflect.SliceHeader)(unsafe.Pointer(&key)).Data,
-			})),
+	return Sum32(*(*string)((unsafe.Pointer)(
+		&reflect.StringHeader{
+			Len:  len(key),
+			Data: (*reflect.SliceHeader)(unsafe.Pointer(&key)).Data,
+		})),
 		seed...)
 
 	// return Sum32(string(key), seed...)
 }
 
-// Sum32 returns a hash from the provided key.
+// Sum32 returns a hash from the provided key useing the seed.
 func Sum32(key string, seed ...uint32) (hash uint32) {
 	hash = defaultSeed
 	if len(seed) > 0 {
@@ -70,21 +69,21 @@ func Sum32(key string, seed ...uint32) (hash uint32) {
 		hash = hash*5 + nh
 	}
 
-	var remainingBytes uint32
+	var remaining uint32
 	switch len(key) - iByte {
 	case 3:
-		remainingBytes += uint32(key[iByte+2]) << 16
+		remaining += uint32(key[iByte+2]) << 16
 		fallthrough
 	case 2:
-		remainingBytes += uint32(key[iByte+1]) << 8
+		remaining += uint32(key[iByte+1]) << 8
 		fallthrough
 	case 1:
-		remainingBytes += uint32(key[iByte])
-		remainingBytes *= c1
+		remaining += uint32(key[iByte])
+		remaining *= c1
 
-		remainingBytes = (remainingBytes << 15) | (remainingBytes >> 17)
-		remainingBytes = remainingBytes * c2
-		hash ^= remainingBytes
+		remaining = (remaining << 15) | (remaining >> 17)
+		remaining = remaining * c2
+		hash ^= remaining
 	}
 
 	hash ^= uint32(len(key))
@@ -96,3 +95,9 @@ func Sum32(key string, seed ...uint32) (hash uint32) {
 
 	return
 }
+
+// func Sum64() {
+// }
+
+// func Sum128() {
+// }

@@ -43,4 +43,4 @@ func main() {
 }
 ```
 
-Based on [MurmurHash](http://en.wikipedia.org/wiki/MurmurHash), thanks [murmur](https://github.com/huichen/murmur).
+Based on [MurmurHash](http://en.wikipedia.org/wiki/MurmurHash), thanks murmur3.

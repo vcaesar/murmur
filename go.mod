@@ -1,4 +1,4 @@
-module github.com/go-ego/murmur
+module github.com/vcaesar/murmur
 
 go 1.13
 
