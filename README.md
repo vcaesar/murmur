@@ -1,5 +1,6 @@
-murmur
-======
+# murmur
+
+[![Build Status](https://github.com/vcaesar/murmur/workflows/Go/badge.svg)](https://github.com/vcaesar/murmur/commits/master)
 [![CircleCI Status](https://circleci.com/gh/vcaesar/murmur.svg?style=shield)](https://circleci.com/gh/vcaesar/murmur)
 [![codecov](https://codecov.io/gh/vcaesar/murmur/branch/master/graph/badge.svg)](https://codecov.io/gh/vcaesar/murmur)
 [![Build Status](https://travis-ci.org/vcaesar/murmur.svg)](https://travis-ci.org/vcaesar/murmur)
@@ -27,13 +28,13 @@ import (
 )
 
 func main() {
-	var str = "github.com"
+	var str = "github.com/vcaesar/murmur"
 
 	sum32 := murmur.Sum32(str)
-	log.Println("hash32...", sum32)
+	log.Println("hash32: ", sum32)
 
 	sum32 = murmur.Sum32(str, 0)
-	log.Println("hash32...", hash32)
+	log.Println("hash32: ", hash32)
 
 	hash32 := murmur.Murmur3([]byte(str))
 	log.Println("hash32...", hash32)
@@ -43,4 +44,4 @@ func main() {
 }
 ```
 
-Based on [MurmurHash](http://en.wikipedia.org/wiki/MurmurHash), thanks murmur3.
+Based on [MurmurHash](http://en.wikipedia.org/wiki/MurmurHash), thanks for murmur3.
