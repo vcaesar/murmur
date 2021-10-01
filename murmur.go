@@ -48,7 +48,7 @@ func Murmur3(key []byte, seed ...uint32) uint32 {
 	// return Sum32(string(key), seed...)
 }
 
-// Sum32 returns a hash from the provided key useing the seed.
+// Sum32 returns a hash from the provided key using the seed.
 func Sum32(key string, seed ...uint32) (hash uint32) {
 	hash = defaultSeed
 	if len(seed) > 0 {
